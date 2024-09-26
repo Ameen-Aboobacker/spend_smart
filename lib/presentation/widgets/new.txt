@@ -1,0 +1,50 @@
+DefaultTabController(
+          length: 2,
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Image.asset('assets/images/bg_grad.jpg',
+                      fit: BoxFit.cover),
+                ),
+                toolbarHeight: 50,
+                pinned: true,
+                expandedHeight: 300,
+                bottom: TabBar(tabs: [
+                  Tab(
+                    text: 'Page 1',
+                  ),
+                  Tab(
+                    text: 'Page 2',
+                  ),
+                ]),
+              ),
+              SliverFillRemaining(
+                child: TabBarView(children: [
+                  Container(
+                    color: Colors.yellow,
+                    child: Center(
+                      child: Text('page 1'),
+                    ),
+                  ),
+                  Container(
+                    color: Colors.lightBlue,
+                    child: Center(
+                      child: Text('page 2'),
+                    ),
+                  ),
+                ]),
+              )
+            ],
+          ),
+        ),
+        floatingActionButton: SizedBox(
+          width: 70,
+          height: 70,
+          child: FloatingActionButton(
+            shape: CircleBorder(),
+            heroTag: 'fab2',
+            onPressed: () {},
+            child: Icon(Icons.add),
+          ),
+        )
