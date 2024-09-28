@@ -74,7 +74,7 @@ class _AccountsSectionState extends State<AccountsSection> {
             maxHeight: accounts.length > 2 ? 145 : 75,
             child: GridView.builder(
               // shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: accounts.length > 5 ? 6 : accounts.length + 1,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
