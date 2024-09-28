@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moneymanager/data/filter.dart';
 
 class ChartAnalysisSection extends StatefulWidget {
   const ChartAnalysisSection({super.key});
@@ -12,15 +11,6 @@ class _ChartAnalysisSectionState extends State<ChartAnalysisSection> {
   String dropdownvalue = 'All';
   @override
   Widget build(Object context) {
-    List tabs = [
-      FilterChipData(
-        label: 'All',
-        selected: true,
-      ),
-      FilterChipData(label: 'Income', icon: Icons.arrow_upward),
-      FilterChipData(label: 'Expense', icon: Icons.arrow_downward),
-      FilterChipData(label: 'Transfer', icon: Icons.refresh)
-    ];
     return Container(
       padding: const EdgeInsets.only(left: 20.5, top: 15),
       decoration: BoxDecoration(

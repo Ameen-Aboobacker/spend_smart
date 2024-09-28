@@ -36,19 +36,19 @@ class _TransactionSectionState extends State<TransactionSection> {
           border: Border.all(),
           borderRadius: BorderRadius.circular(20),
           color: const Color.fromARGB(255, 195, 196, 199)),
-      height: 483,
+      height: 490,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             'Latest Transactions',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 21,
               color: Colors.black,
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             children: List.generate(
               4,
@@ -116,25 +116,29 @@ class _TransactionSectionState extends State<TransactionSection> {
                     Text('Type'),
                   ],
                 ),
-                trailing: const Text('1000'),
+                trailing: const Text(
+                  '1000',
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
             )),
           )),
+          SizedBox(height: 15),
           const Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
                 'Show more...',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
               Icon(
                 Icons.arrow_forward_ios_outlined,
-                size: 18,
+                size: 15,
               ),
-              SizedBox(width: 20)
+              SizedBox(width: 10)
             ],
           ),
-          const SizedBox(height: 18)
+          const SizedBox(height: 10)
         ],
       ),
     );
