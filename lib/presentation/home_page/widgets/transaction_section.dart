@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:moneymanager/data/filter.dart';
+import 'package:moneymanager/presentation/Transactions_screen/transaction_screen.dart';
 
 class TransactionSection extends StatefulWidget {
   const TransactionSection({super.key});
@@ -29,13 +30,13 @@ class _TransactionSectionState extends State<TransactionSection> {
   }
 
   @override
-  Widget build(Object context) {
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 20.5, top: 15),
       decoration: BoxDecoration(
           border: Border.all(),
           borderRadius: BorderRadius.circular(20),
-          color: const Color.fromARGB(255, 195, 196, 199)),
+          color: Colors.white),
       height: 490,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,20 +124,27 @@ class _TransactionSectionState extends State<TransactionSection> {
               ),
             )),
           )),
-          SizedBox(height: 15),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'Show more...',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-              ),
-              Icon(
-                Icons.arrow_forward_ios_outlined,
-                size: 15,
-              ),
-              SizedBox(width: 10)
-            ],
+          const SizedBox(height: 15),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const TransactionScreen(),
+              ));
+            },
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Show more...',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 15,
+                ),
+                SizedBox(width: 10)
+              ],
+            ),
           ),
           const SizedBox(height: 10)
         ],

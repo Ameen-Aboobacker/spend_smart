@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:moneymanager/presentation/accounts_screen/accounts_screen.dart';
 import 'package:moneymanager/presentation/widgets/add_account_button.dart';
 
 import '../../widgets/account_card.dart';
+
+List<Map<String, dynamic>> accounts = [
+  {"label": "Cash", "amount": "₹1000.00", "color": Colors.orange},
+  {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
+  /* {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
+    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
+    {"label": "Cash", "amount": "₹1000.00", "color": Colors.orange},
+    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
+    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
+    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},*/
+];
 
 class AccountsSection extends StatefulWidget {
   const AccountsSection({super.key});
@@ -11,17 +23,6 @@ class AccountsSection extends StatefulWidget {
 }
 
 class _AccountsSectionState extends State<AccountsSection> {
-  List<Map<String, dynamic>> accounts = [
-    {"label": "Cash", "amount": "₹1000.00", "color": Colors.orange},
-    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
-    /* {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
-    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
-    {"label": "Cash", "amount": "₹1000.00", "color": Colors.orange},
-    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
-    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},
-    {"label": "Bank", "amount": "₹2,300.00", "color": Colors.green},*/
-  ];
-
   // Simulate adding an account from the backend
   void _addNewAccount() {
     setState(() {
@@ -48,12 +49,23 @@ class _AccountsSectionState extends State<AccountsSection> {
                   'Your Accounts',
                   style: TextStyle(
                       fontSize: 22,
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700),
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final result =
+                          await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AccountsScreen(),
+                      ));
+                      if (result != null) {
+                        setState(() {
+                          accounts = result;
+                        });
+                      }
+                    },
                     icon: const Icon(
+                      color: Colors.white,
                       Icons.settings_suggest_outlined,
                       size: 32,
                     ))
