@@ -56,7 +56,7 @@ class _AccountsScreenState extends State<AccountsScreen> {
                 width: 45,
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.settings),
+                  icon: const Icon(Icons.settings),
                 ),
               ),
               const SizedBox(

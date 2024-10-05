@@ -40,7 +40,7 @@ class TransactionScreen extends StatelessWidget {
               child:
                   IconButton(onPressed: () {}, icon: const Icon(Icons.search))),
           IconButton(
-            icon: Icon(Icons.filter_list_rounded),
+            icon: const Icon(Icons.filter_list_rounded),
             onPressed: () {},
           )
         ],
@@ -74,7 +74,7 @@ class TransactionScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   date,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 17,
                   ),
                 ),
@@ -111,14 +111,14 @@ class TransactionScreen extends StatelessWidget {
                                   transaction['category'],
                                   style: style,
                                 ),
-                                SizedBox(height: 1),
+                                const SizedBox(height: 1),
                                 Text(
                                   transaction['type'],
                                   style: style,
                                 ),
                               ],
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -129,7 +129,7 @@ class TransactionScreen extends StatelessWidget {
                                 Text('29-sep', style: style1),
                               ],
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
                           ],
                         ));
                   },
