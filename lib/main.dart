@@ -1,7 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:moneymanager/presentation/onboarding_page/onbarding_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+import 'presentation/onboarding_page/onbarding_page.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -10,13 +16,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle style = GoogleFonts.amaranth();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'SpendWise',
       theme: ThemeData(
+        listTileTheme: ListTileThemeData(titleTextStyle: style),
+        textTheme: TextTheme(bodyMedium: style, bodySmall: style),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OnbardingPage(),
+      home: OnbardingPage(),
     );
   }
 }

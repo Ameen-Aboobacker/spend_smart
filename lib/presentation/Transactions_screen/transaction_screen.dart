@@ -180,10 +180,11 @@ class TransactionScreen extends StatelessWidget {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue.withOpacity(0.9),
+        shape: const CircleBorder(side: BorderSide()),
         onPressed: () {},
-        icon: const Icon(Icons.add),
-        label: const Text('New Transaction'),
+        child: const Icon(Icons.add),
       ),
     );
   }

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "304501558595",
+    "firebase_url": "https://money-manager-83719-default-rtdb.firebaseio.com",
+    "project_id": "money-manager-83719",
+    "storage_bucket": "money-manager-83719.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304501558595:android:08041a993dd33a3bf673f6",
+        "android_client_info": {
+          "package_name": "com.spendwise.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc7w2y_lbgnr9cSuoNBc_F_rZrNpQ6Dow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
