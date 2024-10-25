@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:moneymanager/presentation/home_page/widgets/balance_tab_decoration.dart';
 import 'package:moneymanager/presentation/home_page/widgets/home_decoration.dart';
-import 'package:moneymanager/presentation/onboarding_page/widgets/paint_decoration.dart';
 
 List accounts = [
   {
@@ -133,13 +130,13 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             InkWell(
                               onTap: () {
                                 showMenu(
                                     context: context,
-                                    position:
-                                        RelativeRect.fromLTRB(0, 150, 0, 0),
+                                    position: const RelativeRect.fromLTRB(
+                                        0, 150, 0, 0),
                                     items: [
                                       PopupMenuItem(
                                         onTap: () {
@@ -220,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Flexible(
                       child: ListView.separated(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                         addAutomaticKeepAlives: false,
                         addRepaintBoundaries: false,
                         addSemanticIndexes: false,
@@ -229,7 +226,7 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (context, index) {
                           final transcationItem = transes[index];
                           return ListTile(
-                            leading: CircleAvatar(),
+                            leading: const CircleAvatar(),
                             title: Text(
                               transcationItem['name'],
                               style: TextStyle(
@@ -251,7 +248,7 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         separatorBuilder: (context, index) =>
-                            SizedBox(height: 0),
+                            const SizedBox(height: 0),
                       ),
                     )
                   ],
