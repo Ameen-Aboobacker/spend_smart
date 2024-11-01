@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const buttonColor = LinearGradient(
-      colors: [Colors.deepOrange, Color.fromARGB(255, 90, 32, 4)]);
+  static final primaryColor = Colors.red.shade800;
+  static final secondaryColor = Colors.red.shade100;
 }

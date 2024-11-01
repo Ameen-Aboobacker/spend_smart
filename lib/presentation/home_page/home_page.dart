@@ -1,6 +1,10 @@
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:moneymanager/presentation/home_page/widgets/balance_tab_decoration.dart';
 import 'package:moneymanager/presentation/home_page/widgets/home_decoration.dart';
+
+import '../../core/colors.dart';
 
 List accounts = [
   {
@@ -11,13 +15,25 @@ List accounts = [
         'name': 'transaction 11',
         'amount': '1500',
         'type': 'income',
-        'category': 'Grocery'
+        'category': 'Grocery',
+        'date': DateFormat('dd/MM/yy').format(
+          DateTime.now().subtract(
+            const Duration(days: 2),
+          ),
+        ),
+        'time': DateFormat('hh:mm a').format(
+          DateTime.now().subtract(
+            const Duration(hours: 2),
+          ),
+        ),
       },
       {
         'name': 'transaction 12',
         'amount': '1100',
         'type': 'income',
-        'category': 'book'
+        'category': 'book',
+        'date': DateFormat('dd/MM/yy').format(DateTime.now()),
+        'time': DateFormat('hh:mm a').format(DateTime.now()),
       }
     ]
   },
@@ -29,19 +45,103 @@ List accounts = [
         'name': 'transaction 21',
         'amount': '1000',
         'type': 'expense',
-        'category': 'shopping'
+        'category': 'shopping',
+        'date': DateFormat('dd/MM/yy').format(
+          DateTime.now().subtract(
+            const Duration(days: 2),
+          ),
+        ),
+        'time': DateFormat('hh:mm a').format(
+          DateTime.now().subtract(
+            const Duration(hours: 2),
+          ),
+        ),
       },
       {
         'name': 'transaction 22',
         'amount': '500',
         'type': 'income',
-        'category': 'Grocery'
+        'category': 'Grocery',
+        'date': DateFormat('dd/MM/yy').format(DateTime.now()),
+        'time': DateFormat('hh:mm a').format(DateTime.now()),
       },
       {
         'name': 'transaction 23',
         'amount': '500',
         'type': 'income',
-        'category': 'Grocery'
+        'category': 'Grocery',
+        'date': DateFormat('dd/MM/yy').format(
+          DateTime.now().subtract(
+            const Duration(days: 2),
+          ),
+        ),
+        'time': DateFormat('hh:mm a').format(
+          DateTime.now().add(
+            const Duration(hours: 2),
+          ),
+        ),
+      }
+    ]
+  },
+  {
+    'name': "Cash Wallet 2",
+    'Balance': 21000,
+    'Transactions': [
+      {
+        'name': 'transaction 31',
+        'amount': '1000',
+        'type': 'expense',
+        'category': 'shopping',
+        'date': DateFormat('dd/MM/yy').format(
+          DateTime.now().subtract(
+            const Duration(days: 2),
+          ),
+        ),
+        'time': DateFormat('hh:mm a').format(
+          DateTime.now().subtract(
+            const Duration(hours: 2),
+          ),
+        ),
+      },
+      {
+        'name': 'transaction 32',
+        'amount': '500',
+        'type': 'income',
+        'category': 'Grocery',
+        'date': DateFormat('dd/MM/yy').format(DateTime.now()),
+        'time': DateFormat('hh:mm a').format(DateTime.now()),
+      },
+      {
+        'name': 'transaction 33',
+        'amount': '500',
+        'type': 'expense',
+        'category': 'Grocery',
+        'date': DateFormat('dd/MM/yy').format(
+          DateTime.now().subtract(
+            const Duration(days: 2),
+          ),
+        ),
+        'time': DateFormat('hh:mm a').format(
+          DateTime.now().add(
+            const Duration(hours: 2),
+          ),
+        ),
+      },
+      {
+        'name': 'transaction 34',
+        'amount': '500',
+        'type': 'expense',
+        'category': 'Grocery',
+        'date': DateFormat('dd/MM/yy').format(
+          DateTime.now().subtract(
+            const Duration(days: 2),
+          ),
+        ),
+        'time': DateFormat('hh:mm a').format(
+          DateTime.now().add(
+            const Duration(hours: 2),
+          ),
+        ),
       }
     ]
   }
@@ -108,15 +208,16 @@ class _HomePageState extends State<HomePage> {
 
     final size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.secondaryColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 25),
             CustomPaint(
               painter: HomeDecoration(),
               child: Container(
                 padding: const EdgeInsets.fromLTRB(25, 47, 15, 0),
-                height: size.height * 0.5,
+                height: size.height * 0.48,
                 child: Column(
                   children: [
                     const CustomAppBar(user: user),
@@ -206,7 +307,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: Container(
-                color: Colors.white,
+                //  color: Colors.white,
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,26 +325,57 @@ class _HomePageState extends State<HomePage> {
                         shrinkWrap: true,
                         itemCount: transes.length,
                         itemBuilder: (context, index) {
-                          final transcationItem = transes[index];
+                          final transactionItem = transes[index];
+
                           return ListTile(
                             leading: const CircleAvatar(),
                             title: Text(
-                              transcationItem['name'],
+                              transactionItem['name'],
                               style: TextStyle(
-                                  color: Colors.blue.shade700,
+                                  fontSize: 16,
+                                  color: AppColors.primaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
-                            subtitle: RichText(
-                              text: TextSpan(
-                                text: 'Income.',
-                                style: const TextStyle(color: Colors.green),
-                                children: [
-                                  TextSpan(
-                                      text: 'Grocery',
-                                      style: TextStyle(
-                                          color: Colors.blue.shade700))
-                                ],
+                            subtitle: Text(
+                              '${transactionItem['category']}.',
+                              style: TextStyle(
+                                color: Colors.teal.shade300,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
                               ),
+                            ),
+                            trailing: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  ' ${transactionItem['type'] == 'income' ? '+' : '-'}₹${transactionItem['amount'].toString()}',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      color: transactionItem['type'] == 'income'
+                                          ? Colors.green.shade700
+                                          : Colors.red.shade900,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  transactionItem['date'],
+                                  style: const TextStyle(
+                                    height: 0.6,
+                                    fontSize: 10,
+                                    fontStyle: FontStyle.italic,
+                                    color: Color.fromARGB(255, 115, 104, 107),
+                                  ),
+                                ),
+                                Text(
+                                  transactionItem['time'],
+                                  style: const TextStyle(
+                                    height: 2,
+                                    fontSize: 10,
+                                    fontStyle: FontStyle.italic,
+                                    color: Color.fromARGB(255, 115, 104, 107),
+                                  ),
+                                ),
+                              ],
                             ),
                           );
                         },

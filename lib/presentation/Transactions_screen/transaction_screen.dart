@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:moneymanager/core/colors.dart';
 
 class TransactionScreen extends StatelessWidget {
   const TransactionScreen({super.key});
@@ -35,9 +36,9 @@ class TransactionScreen extends StatelessWidget {
     TextStyle style1 =
         const TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: AppColors.primaryColor,
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: AppColors.primaryColor,
         actions: [
           SizedBox(
               width: 25,
@@ -89,10 +90,13 @@ class TransactionScreen extends StatelessWidget {
                       'LAST 30 DAYS',
                       style: style.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: AppColors.secondaryColor,
                       ),
                     ),
-                    icon: const Icon(Icons.arrow_drop_down_outlined),
+                    icon: Icon(
+                      Icons.arrow_drop_down_outlined,
+                      color: AppColors.secondaryColor,
+                    ),
                   ),
                   Text('2000', style: style),
                 ],
@@ -109,21 +113,25 @@ class TransactionScreen extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Container(
+                height: 1,
+                color: AppColors.secondaryColor,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   newdate,
-                  style: const TextStyle(
-                    fontSize: 17,
-                  ),
+                  style:
+                      TextStyle(fontSize: 17, color: AppColors.secondaryColor),
                 ),
               ),
 
               // Transactions under the date
               Container(
-                color: Colors.white,
+                color: AppColors.secondaryColor,
                 child: ListView.builder(
                   itemCount: transactions.length,
+                  padding: const EdgeInsets.all(0),
                   shrinkWrap: true, // Important to prevent scrolling issues
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, transactionIndex) {
@@ -134,7 +142,7 @@ class TransactionScreen extends StatelessWidget {
                         decoration: const BoxDecoration(
                           border: Border(top: BorderSide(width: 0.5)),
                         ),
-                        height: 90,
+                        height: 70,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,

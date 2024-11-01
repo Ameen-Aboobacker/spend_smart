@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class HomeDecoration extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
+    final width = size.width;
+    log(width.toString());
     Paint paint = Paint()
       ..color = Colors.pink.shade800
       ..style = PaintingStyle.fill;
@@ -10,17 +14,16 @@ class HomeDecoration extends CustomPainter {
     Path path = Path();
 
     // Start from top-left corner
-    path.moveTo(0, 0);
-    path.lineTo(0, size.height);
+    path.moveTo(8, 40);
+    path.lineTo(8, size.height);
 
-    path.quadraticBezierTo(
-        size.width / 10, size.height - 55, size.width, size.height);
-
-    path.lineTo(size.width, 0);
+    path.quadraticBezierTo(23, size.height - 40, size.width - 8, size.height);
+    path.lineTo(size.width - 8, 40);
+    path.quadraticBezierTo(20, 0, 8, 40);
     // Draw the rest of the container (flat)
     // Move to bottom-right
     // Move to bottom-left
-    path.close(); // Close the path
+    // Close the path
 
     // Draw the path on the canvas
     canvas.drawPath(path, paint);

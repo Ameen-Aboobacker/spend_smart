@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../home_page/widgets/accounts_section.dart';
-import 'add_account_screen.dart';
 
 class AccountsScreen extends StatefulWidget {
   const AccountsScreen({super.key});
@@ -13,8 +11,6 @@ class AccountsScreen extends StatefulWidget {
 class _AccountsScreenState extends State<AccountsScreen> {
   @override
   Widget build(BuildContext context) {
-    const String label = 'Spend';
-    const String amount = '5000';
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
