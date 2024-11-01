@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "moneymanager",
+            "name": "SpendSmart",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "moneymanager (profile mode)",
+            "name": "SpendSmart (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "moneymanager (release mode)",
+            "name": "SpendSmart (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

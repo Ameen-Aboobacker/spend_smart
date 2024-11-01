@@ -1,4 +1,4 @@
-# moneymanager
+# SpendSmart
 
 A new Flutter project.
 

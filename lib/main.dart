@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     TextStyle style = GoogleFonts.amaranth();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'SpendWise',
+      title: 'SpendSmart',
       theme: ThemeData(
         listTileTheme: ListTileThemeData(titleTextStyle: style),
         textTheme: TextTheme(bodyMedium: style, bodySmall: style),

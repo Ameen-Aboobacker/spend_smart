@@ -1,6 +1,6 @@
 {
-    "name": "moneymanager",
-    "short_name": "moneymanager",
+    "name": "SpendSmart",
+    "short_name": "SpendSmart",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

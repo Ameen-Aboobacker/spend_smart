@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:moneymanager/core/colors.dart';
+import 'package:SpendSmart/core/colors.dart';
 
 class TransactionScreen extends StatelessWidget {
   const TransactionScreen({super.key});

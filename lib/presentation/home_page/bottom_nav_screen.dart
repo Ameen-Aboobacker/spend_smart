@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:moneymanager/presentation/Transactions_screen/transaction_screen.dart';
-import 'package:moneymanager/presentation/accounts_screen/accounts_screen.dart';
-import 'package:moneymanager/presentation/analysis_screen/analysis_screen.dart';
-import 'package:moneymanager/presentation/home_page/home_page.dart';
-import 'package:moneymanager/presentation/home_page/widgets/bottom_navigation_bar_widget.dart';
-import 'package:moneymanager/presentation/profile_and_settings/profile_screen.dart';
+import 'package:SpendSmart/presentation/Transactions_screen/transaction_screen.dart';
+import 'package:SpendSmart/presentation/accounts_screen/accounts_screen.dart';
+import 'package:SpendSmart/presentation/analysis_screen/analysis_screen.dart';
+import 'package:SpendSmart/presentation/home_page/home_page.dart';
+import 'package:SpendSmart/presentation/home_page/widgets/bottom_navigation_bar_widget.dart';
+import 'package:SpendSmart/presentation/profile_and_settings/profile_screen.dart';
 
 ValueNotifier<int> navNotifier = ValueNotifier(2);
 

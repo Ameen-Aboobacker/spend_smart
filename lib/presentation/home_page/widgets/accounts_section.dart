@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moneymanager/presentation/accounts_screen/accounts_screen.dart';
-import 'package:moneymanager/presentation/widgets/add_account_button.dart';
+import 'package:SpendSmart/presentation/accounts_screen/accounts_screen.dart';
+import 'package:SpendSmart/presentation/widgets/add_account_button.dart';
 
 import '../../widgets/account_card.dart';
 

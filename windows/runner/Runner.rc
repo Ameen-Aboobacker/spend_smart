@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "moneymanager" "\0"
+            VALUE "FileDescription", "SpendSmart" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "moneymanager" "\0"
+            VALUE "InternalName", "SpendSmart" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "moneymanager.exe" "\0"
-            VALUE "ProductName", "moneymanager" "\0"
+            VALUE "OriginalFilename", "SpendSmart.exe" "\0"
+            VALUE "ProductName", "SpendSmart" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

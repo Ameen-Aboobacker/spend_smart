@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:moneymanager/presentation/home_page/widgets/balance_tab_decoration.dart';
-import 'package:moneymanager/presentation/home_page/widgets/home_decoration.dart';
+import 'package:SpendSmart/presentation/home_page/widgets/balance_tab_decoration.dart';
+import 'package:SpendSmart/presentation/home_page/widgets/home_decoration.dart';
 
 import '../../core/colors.dart';
 

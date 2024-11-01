@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:moneymanager/data/filter.dart';
-import 'package:moneymanager/presentation/Transactions_screen/transaction_screen.dart';
+import 'package:SpendSmart/data/filter.dart';
+import 'package:SpendSmart/presentation/Transactions_screen/transaction_screen.dart';
 
 class TransactionSection extends StatefulWidget {
   const TransactionSection({super.key});
