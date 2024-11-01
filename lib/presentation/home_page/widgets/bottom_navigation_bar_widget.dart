@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:SpendSmart/core/colors.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         onTap(index);
       },
       initialActiveIndex: 2,
-      backgroundColor: Colors.pink.shade800,
+      backgroundColor: AppColors.primaryColor,
       items: const [
         TabItem(icon: Icon(Icons.account_balance), title: 'Accounts'),
         TabItem(icon: Icon(Icons.list), title: 'Records'),

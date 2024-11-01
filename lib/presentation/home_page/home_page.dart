@@ -230,7 +230,6 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const SizedBox(height: 8),
                             InkWell(
                               onTap: () {
                                 showMenu(
@@ -254,12 +253,23 @@ class _HomePageState extends State<HomePage> {
                                       )
                                     ]);
                               },
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 15),
-                                  Text(selected),
-                                  const Icon(Icons.arrow_drop_down)
-                                ],
+                              child: SizedBox(
+                                width: 155,
+                                height: 40,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      selected,
+                                      style: TextStyle(
+                                          color: AppColors.primaryColor,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Icon(Icons.arrow_drop_down,
+                                        color: AppColors.primaryColor)
+                                  ],
+                                ),
                               ),
                             ),
                             const SizedBox(height: 15),
@@ -271,13 +281,13 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     'Balance',
                                     style: TextStyle(
-                                        color: Colors.pink.shade300,
+                                        color: AppColors.primaryColor,
                                         fontSize: 19),
                                   ),
                                   Text(
                                     '₹$totalBalance',
-                                    style: const TextStyle(
-                                      color: Colors.pink,
+                                    style: TextStyle(
+                                      color: AppColors.primaryColor,
                                       fontSize: 60,
                                       fontWeight: FontWeight.bold,
                                       height: 1,

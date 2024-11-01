@@ -22,7 +22,9 @@ class PageIndicatorRow extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(createRoute());
+                      },
                       child: const Text(
                         'Skip',
                         style: TextStyle(

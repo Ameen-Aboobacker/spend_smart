@@ -1,14 +1,13 @@
 import 'dart:developer';
 
+import 'package:SpendSmart/core/colors.dart';
 import 'package:flutter/material.dart';
 
 class HomeDecoration extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final width = size.width;
-    log(width.toString());
     Paint paint = Paint()
-      ..color = Colors.pink.shade800
+      ..color = AppColors.primaryColor
       ..style = PaintingStyle.fill;
 
     Path path = Path();
