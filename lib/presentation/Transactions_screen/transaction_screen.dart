@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:SpendSmart/core/colors.dart';
+import 'package:spend_smart/core/colors.dart';
 
 class TransactionScreen extends StatelessWidget {
   const TransactionScreen({super.key});
@@ -93,7 +93,7 @@ class TransactionScreen extends StatelessWidget {
                         color: AppColors.secondaryColor,
                       ),
                     ),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_drop_down_outlined,
                       color: AppColors.secondaryColor,
                     ),
@@ -121,8 +121,8 @@ class TransactionScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   newdate,
-                  style:
-                      TextStyle(fontSize: 17, color: AppColors.secondaryColor),
+                  style: const TextStyle(
+                      fontSize: 17, color: AppColors.secondaryColor),
                 ),
               ),
 

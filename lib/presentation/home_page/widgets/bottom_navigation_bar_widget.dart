@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:SpendSmart/core/colors.dart';
+import 'package:spend_smart/core/colors.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +12,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConvexAppBar(
+      activeColor: Colors.white,
       style: TabStyle.react,
       height: 55,
       onTap: (index) {

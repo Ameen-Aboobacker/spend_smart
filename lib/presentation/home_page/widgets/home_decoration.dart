@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:SpendSmart/core/colors.dart';
+import 'package:spend_smart/core/colors.dart';
 import 'package:flutter/material.dart';
 
 class HomeDecoration extends CustomPainter {

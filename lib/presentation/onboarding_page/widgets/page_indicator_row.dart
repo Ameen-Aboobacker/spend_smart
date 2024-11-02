@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:SpendSmart/presentation/home_page/bottom_nav_screen.dart';
+import 'package:spend_smart/presentation/home_page/bottom_nav_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../onbarding_page.dart';
