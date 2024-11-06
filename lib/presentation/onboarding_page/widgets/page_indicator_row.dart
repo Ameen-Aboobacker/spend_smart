@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spend_smart/presentation/home_page/bottom_nav_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../core/colors.dart';
 import '../onbarding_page.dart';
 
 class PageIndicatorRow extends StatelessWidget {
@@ -25,23 +26,23 @@ class PageIndicatorRow extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(createRoute());
                       },
-                      child: const Text(
+                      child: Text(
                         'Skip',
                         style: TextStyle(
                           fontSize: 17,
-                          color: Colors.blue,
+                          color: AppColors.primaryColor,
                         ),
                       ),
                     ),
                     SmoothPageIndicator(
                       controller: controller,
                       count: 4,
-                      effect: const ExpandingDotsEffect(
+                      effect: ExpandingDotsEffect(
                           spacing: 15,
                           dotHeight: 12,
                           dotWidth: 12,
-                          activeDotColor: Colors.blue,
-                          dotColor: Color.fromARGB(255, 157, 185, 253)),
+                          activeDotColor: AppColors.primaryColor,
+                          dotColor: AppColors.secondaryColor),
                     ),
                     TextButton(
                       onPressed: () {
@@ -49,9 +50,10 @@ class PageIndicatorRow extends StatelessWidget {
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn);
                       },
-                      child: const Text(
+                      child: Text(
                         'Next',
-                        style: TextStyle(fontSize: 17, color: Colors.blue),
+                        style: TextStyle(
+                            fontSize: 17, color: AppColors.primaryColor),
                       ),
                     ),
                   ],
@@ -63,9 +65,10 @@ class PageIndicatorRow extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(createRoute());
                       },
-                      child: const Text(
+                      child: Text(
                         "Let's Go",
-                        style: TextStyle(fontSize: 17, color: Colors.blue),
+                        style: TextStyle(
+                            fontSize: 17, color: AppColors.primaryColor),
                       ),
                     ),
                     const SizedBox(width: 20)

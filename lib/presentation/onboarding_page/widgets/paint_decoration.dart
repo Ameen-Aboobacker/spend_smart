@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/colors.dart';
+
 class BackgroundDecoration extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = Colors.blue
+      ..color = AppColors.primaryColor
       ..style = PaintingStyle.fill;
 
     Path path = Path();

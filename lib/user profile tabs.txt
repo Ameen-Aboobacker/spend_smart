@@ -1,0 +1,9 @@
+user profile tabs
+statistics
+debts
+shopping
+dark mode
+hide amounts
+help
+settings
+logout
